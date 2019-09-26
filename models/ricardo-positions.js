@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
   var Positions = sequelize.define("Positions", {
     PostionId: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
     },
@@ -11,10 +11,9 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Positions.associate = function(models) {
-    Positions.hasMany(models.Employees, {
-    });
+    Positions.hasMany(models.Employees, {});
   };
-  
+
   return Positions;
 };
 

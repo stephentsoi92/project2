@@ -1,7 +1,7 @@
   module.exports = function(sequelize, DataTypes) {
     var Employees = sequelize.define("Employees", {
       EmployeeId: {
-        type: DataTypes.INT,
+        type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
       },
@@ -17,13 +17,6 @@
       Email: {
         type:DataTypes.TEXT
       },
-      PositionId: {
-        type:DataTypes.INT,
-        references: {
-          model: Positions,
-          key: 'PositionId'
-        }
-      },
       Supervisor: {
         type:DataTypes.BOOLEAN
       }
@@ -35,8 +28,12 @@
           allowNull: false
         }
       });
+
+      Employees.associate = function(models) {
+        Employees.hasMany(models.Shifts, {});
+      }
     };
-    
+
     return Employees;
   };
 
