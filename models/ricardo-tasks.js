@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
     var Tasks = sequelize.define("Tasks", {
       TaskId: {
-        type: DataTypes.INT,
+        type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
       },
@@ -13,14 +13,12 @@ module.exports = function(sequelize, DataTypes) {
         },
       Complete: {
           type:DataTypes.BOOLEAN
-        },
-      ShiftId: {
-          type: DataTypes.INT,
-          references: {
-            model: Shifts,
-            key: 'ShiftId'
         }
-      }
     });
+
+    Tasks.associate = function(models) {
+      Tasks.hasMany(models.Shifts, {});
+    };
+
     return Tasks;
   };
