@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+  module.exports = function(sequelize, DataTypes) {
     var Employees = sequelize.define("Employees", {
       EmployeeId: {
         type: DataTypes.INT,
@@ -28,6 +28,15 @@ module.exports = function(sequelize, DataTypes) {
         type:DataTypes.BOOLEAN
       }
     });
+
+    Employees.associate = function(models) {
+      Employees.belongsTo(models.Positions, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
+    };
+    
     return Employees;
   };
 
