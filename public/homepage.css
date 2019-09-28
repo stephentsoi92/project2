@@ -22,3 +22,12 @@ h2{
 .jumbotron{
     background-image: url("");
 }
+
+.border.register{
+    padding: 10px;
+    background-color: whitesmoke;
+}
+
+#signIn{
+    margin: 50px 400px auto;
+}
