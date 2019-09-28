@@ -1,0 +1,159 @@
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href='packages/core/main.css' rel='stylesheet' />
+    <link href='packages/daygrid/main.css' rel='stylesheet' />
+    <link href='calendar.css' rel='stylesheet' />
+    <link href='homepage.css' rel='stylesheet' />
+
+    <script src='packages/core/main.js' rel='stylesheet'></script>
+    <script src='packages/daygrid/main.js' rel='stylesheet'></script>
+    <script src='packages/list/main.js' rel='stylesheet'></script>
+    <link href='packages/list/main.css' rel='stylesheet'></script>
+    <script src='packages/interaction/main.js' rel='stylesheet'></script>
+    <script src='packages/timegrid/main.js' rel='stylesheet'></script>
+    <link href='packages/timegrid/main.css' rel='stylesheet'></script>
+
+    <script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+  
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'list' ],
+      defaultView: 'dayGridMonth',
+      defaultDate: '2019-09-07',
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek,timeGridDay'
+      },
+      events: [
+        {
+        title: 'Jenny Smith',
+          start: '2019-09-01T08:30:00',
+          end:   '2019-09-01T12:00:00'
+        },
+        {
+        title: 'Theo Colt',
+          start: '2019-09-01T12:30:00',
+          end: '2019-09-01T16:00:00'
+        },
+        {
+        title: 'Jenny Smith',
+          start: '2019-09-04T08:30:00',
+          end:   '2019-09-04T12:00:00'
+        },
+        {
+        title: 'John Smith',
+          start: '2019-09-04T12:30:00',
+          end: '2019-09-04T16:00:00'
+        },
+        {
+        title: 'Abigail Prado',
+          start: '2019-09-10T08:30:00',
+          end:   '2019-09-10T12:00:00'
+        },
+        {
+        title: 'John Smith',
+          start: '2019-09-10T12:30:00',
+          end: '2019-09-10T16:00:00'
+        },
+        {
+          title: 'Juan Rodriguez',
+          start: '2019-09-12T12:00:00'
+        },
+        {
+          title: 'Dezarai Fisher',
+          start: '2019-09-12T14:30:00'
+        },
+        {
+          title: 'Isaac Brown',
+          start: '2019-09-13T07:00:00'
+        },
+        {
+          title: 'Event at UMiami',
+          url: 'http://miami.edu/',
+          start: '2019-09-28'
+        }
+      ]
+    });
+  
+    calendar.render();
+  });
+
+
+
+    </script>
+  </head>
+  <body>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">Tuesday</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse text-right" id="navbarNavDropdown">
+                    <div class="space-filler"></div>
+                  <ul class="navbar-nav">
+                    <li class="nav-item ">
+                      <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Calendar</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="tasks.html">Tasks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="employee.html">Employees</a>
+                      </li>
+                     <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Account 
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Register</a>
+                        <a class="dropdown-item" href="#">Login</a>
+                        <a class="dropdown-item" href="#">Account Settings</a>
+                        <a class="dropdown-item" href="#">Logout</a>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+
+
+<div class="row" >
+    <div class="card" id="sidebar" style="width: 18rem;">
+        <img src="../images/employeeFemale.jpeg" alt="" style="height: 200px">
+        
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" id="contactInformation"><h5>Contact Information</h5>  
+            <div id="name">Jenny Smith</div>
+            <div id="phoneNumber">Phone number: 867-5309</div>
+        <div id="email">Email: tommytutone@music.com</div>
+        </li>
+          <li class="list-group-item">
+                <h5>Availability</h5>
+<div>Monday-Friday: 2:30pm - 8am</div>
+          </li>
+          <li class="list-group-item" id="nextShift"><h5>Next Scheduled Shift</h5>  
+            <div>Date: September 30, 2019 </div>
+                <div>Time: 4:30pm - 10pm</div>
+
+        </ul>
+        <div class="card-body">
+                <button type="button" class="btn btn-secondary"><a href="#"></a>Want To Swap Shifts with Jenny?</button>
+
+          
+        </div>
+      </div>
+
+      <div id='calendar'>    </div>
+    </div>
+
+
+  </body>
+</html>
