@@ -16,9 +16,5 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
 
-    Tasks.associate = function(models) {
-      Tasks.hasMany(models.Shifts, {});
-    };
-
     return Tasks;
   };

@@ -9,13 +9,9 @@ module.exports = function(sequelize, DataTypes) {
           type: DataTypes.DATE
         }
       });
-
+      
       Shifts.associate = function(models) {
-        Shifts.belongsTo(models.Employees, {
-          foreignKey: {
-            allowNull: false
-          }
-        });
-      }      
+        Shifts.belongsToMany(models.Employees, {through: 'ShiftsRoster'})
+      }
     return Shifts;
   };

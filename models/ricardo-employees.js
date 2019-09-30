@@ -30,7 +30,7 @@
       });
 
       Employees.associate = function(models) {
-        Employees.hasMany(models.Shifts, {});
+        Employees.belongsToMany(models.Shifts, {through: 'shiftRoster'});
       }
     };
 
