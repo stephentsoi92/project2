@@ -11,7 +11,7 @@ module.exports = function(sequelize, DataTypes) {
       });
       
       Shifts.associate = function(models) {
-        Shifts.belongsToMany(models.Employees, {through: 'ShiftsRoster'})
+        Shifts.belongsToMany(models.Employees, {through: "ShiftsRoster"})
       }
     return Shifts;
   };
