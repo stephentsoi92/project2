@@ -25,3 +25,24 @@ module.exports = function(app) {
     res.render("404");
   });
 };
+
+// --------------------------------------
+// Load Tasks page
+app.get("/tasks", function(req, res) {
+  res.render("tasks.html")
+});
+
+// Load by specific task
+app.get("/tasks/:id", function(req, res) {
+  res.render("tasks.html")
+});
+
+// Load Shifts page
+app.get("/shifts", function(req, res) {
+  res.render("shifts.html")
+});
+
+// Load by specific shift
+app.get("/shifts/:id", function(req, res) {
+  res.render("shifts.html")
+});
