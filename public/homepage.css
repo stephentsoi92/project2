@@ -31,3 +31,16 @@ h2{
 #signIn{
     margin: 50px 400px auto;
 }
+
+#logoutImage{
+    object-position: center;
+    align-content: center;
+    margin: 20px auto;
+}
+
+#signOut{
+    object-position: center;
+    align-content: center;
+    margin: 20px auto;
+    text-align: center;
+}

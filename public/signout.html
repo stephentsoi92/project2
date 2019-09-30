@@ -25,7 +25,7 @@
                             <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link " href="calendar.html">Calendar</a>
+                            <a class="nav-link" href="calendar.html">Calendar</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " href="tasks.html">Tasks</a>
@@ -40,52 +40,54 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item" href="register.html">Employer Registration</a>
-                                <a class="dropdown-item active" href="login.html">Login</a>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#signOut">Logout</a>
+                                <a class="dropdown-item" href="login.html">Login</a>
+                                <a class="dropdown-item active" href="#">Logout</a>
                             </div>
                         </li>
                     </ul>
                 </div>
             </nav>
   </body>
-  <div class="text-center" id="signIn">
-        <form class="form-signin" >
-          <img class="mb-4" src="../images/logo.png" alt="" width="72" height="72">
-          <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-          <label for="inputEmail" class="sr-only">Email address</label>
-          <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-          <br>
-          <label for="inputPassword" class="sr-only">Password</label>
-          <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-          <div class="checkbox mb-3" style="text-align:left">
-            <label>
-              <input type="checkbox" value="remember-me" > Remember me
-            </label>
-          </div>
-          <button class="btn btn-lg btn-primary btn-block col-2" type="submit">Sign in</button>
-        </form>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="signOut" tabindex="-1" role="dialog" aria-labelledby="signOutLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="signOutLabel">Are you sure you want to sign out?</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body" id="logoutImage">
-                    <img src="../images/logout.jpg" alt=""  id="logoutImage" style="width: 200px">
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Sign Out</button>
-                  <button type="button" class="btn btn-primary" data-dismiss="modal">Go Back</button>
-                </div>
-              </div>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Jenny Smith</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <img src="../images/employeeFemale.jpeg" alt="" style="width: 400px;">
+                <p>jenny@Tuesday.com</p> 
+                <p>8675309</p> 
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" ><a href="mailto:name@email.com" style="color:aliceblue">Email</a></button>
             </div>
           </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="signOut" tabindex="-1" role="dialog" aria-labelledby="signOutLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="signOutLabel">Are you sure you want to sign out?</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body" id="logoutImage">
+                        <img src="../images/logout.jpg" alt=""  id="logoutImage" style="width: 200px">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Sign Out</button>
+                      <button type="button" class="btn btn-primary" data-dismiss="modal">Go Back</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
