@@ -29,10 +29,10 @@
         }
       });
 
-      Employees.associate = function(models) {
-        Employees.belongsToMany(models.Shifts, {through: 'shiftRoster'});
-      }
-    };
+    Employees.associate = function(models) {
+      Employees.belongsToMany(models.Shifts, {through: "ShiftsRoster"});
+    }
+  };
 
     return Employees;
   };
