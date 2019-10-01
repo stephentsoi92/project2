@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
   var Positions = sequelize.define("Positions", {
-    PostionId: {
+    PositionId: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
