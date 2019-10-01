@@ -8,12 +8,13 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href='homepage.css' rel='stylesheet' />
+    <script src="js/signOut.js"></script>
 
     <title>Tuesday</title>
   </head>
   <body>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="index.html">Tuesday</a>
+          <a class="navbar-brand" href="calendar.html">Tuesday</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
               aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -21,9 +22,7 @@
           <div class="collapse navbar-collapse text-right" id="navbarNavDropdown">
               <div class="space-filler"></div>
               <ul class="navbar-nav">
-                  <li class="nav-item ">
-                      <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                  </li>
+                  
                   <li class="nav-item ">
                       <a class="nav-link " href="calendar.html">Calendar</a>
                   </li>
@@ -148,12 +147,12 @@
                     <img src="../images/logout.jpg" alt=""  id="logoutImage" style="width: 200px">
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Sign Out</button>
-                  <button type="button" class="btn btn-primary" data-dismiss="modal">Go Back</button>
+                    <button type="button" class="btn btn-secondary"  data-dismiss="modal" style="color: aliceblue" onclick="signOut()"> Sign Out </button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="remain()"> Go Back </button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
           <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
