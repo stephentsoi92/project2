@@ -21,7 +21,7 @@ function sendEmployeeData(employeeData)
         method: "POST",
         data: employeeData
     }).then(function(data){
-        console.log('Successfully Posted');
+        $('input').val('');
     });
 }
 
