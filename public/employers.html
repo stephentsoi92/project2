@@ -51,7 +51,7 @@
                 <div class="card">
                         <div class="card-header" id="headingOne">
                           <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" >
 Add New Employee
                             </button>
                           </h5>
@@ -60,24 +60,24 @@ Add New Employee
                           <div class="card-body">
                                 <form>
                                         <div class="form-group">
-                                                <label for="exampleFormControlInput1">First Name</label>
-                                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Mac">
+                                                <label for="firstName">First Name</label>
+                                                <input type="text" class="form-control" id="firstName" placeholder="Mac">
                                               </div>    
                                               <div class="form-group">
-                                                    <label for="exampleFormControlInput1">Last Name</label>
-                                                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Lovin">
+                                                    <label for="lastName">Last Name</label>
+                                                    <input type="text" class="form-control" id="lastName" placeholder="Lovin">
                                                   </div>
                                     <div class="form-group">
-                                          <label for="exampleFormControlInput1">Email Address</label>
-                                          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                          <label for="email">Email Address</label>
+                                          <input type="email" class="form-control" id="email" placeholder="name@example.com">
                                         </div>
                                         <div class="form-group">
-                                                <label for="exampleFormControlInput1">Phone Number</label>
-                                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="305-305-3005">
+                                                <label for="phone">Phone Number</label>
+                                                <input type="text" class="form-control" id="phone" placeholder="305-305-3005">
                                               </div>
                                               <div class="form-group">
-                                                    <label for="exampleFormControlSelect2">Employee Position </label>
-                                                    <select single class="form-control" id="exampleFormControlSelect2">
+                                                    <label for="employeePosition">Employee Position </label>
+                                                    <select single class="form-control" id="employeePosition">
                                                       <option value="" selected disabled>Select a position</option>
                                                       <option>Tuesday</option>
                                                       <option>Wednesday</option>
@@ -88,8 +88,8 @@ Add New Employee
                                                     </select>
                                                   </div>
                                         <div class="form-group">
-                                          <label for="exampleFormControlSelect2">Shifts Available (to select more than one => control + click on pc, command + click on mac)</label>
-                                          <select multiple class="form-control" id="exampleFormControlSelect2">
+                                          <label for="EmployeeShifts">Shifts Available (to select more than one => control + click on pc, command + click on mac)</label>
+                                          <select multiple class="form-control" id="employeeShifts">
                                             <option>7am - 2:30pm</option>
                                             <option>2:30pm - 8pm</option>
                                             <option>8pm - 3:30am</option>
@@ -97,10 +97,10 @@ Add New Employee
 \                                          </select>
                                         </div>
                                         <div class="form-group">
-                                          <label for="exampleFormControlTextarea1">Comments (hidden from employee view)</label>
-                                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                          <label for="employerComments">Comments (hidden from employee view)</label>
+                                          <textarea class="form-control" id="employerComments" rows="3"></textarea>
                                         </div>
-                                        <button type="submit" class="btn btn-primary mb-2">Create New Employee</button>
+                                        <button type="submit" class="btn btn-primary mb-2" id="addNewEmployeeButton">Create New Employee</button>
 
                                       </form>
                           </div>
