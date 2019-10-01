@@ -112,16 +112,8 @@ document.addEventListener('DOMContentLoaded', function() {
               <li class="nav-item ">
                   <a class="nav-link" href="employee.html">Employees</a>
               </li>
-              <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Account
-                  </a>
-                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" href="register.html">Employer Registration</a>
-                      <a class="dropdown-item" href="login.html">Login</a>
-                      <a class="dropdown-item" href="#" data-toggle="modal" data-target="#signOut">Logout</a>
-                  </div>
+              <li class="nav-item ">
+                  <a class="nav-link" href="#" data-toggle="modal" data-target="#signOut">Logout</a>
               </li>
           </ul>
       </div>
@@ -130,25 +122,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <div class="row" >
     <div class="card" id="sidebar" style="width: 18rem;">
-        <img src="../images/employeeFemale.jpeg" alt="" style="height: 200px">
+        <img src="../images/employeeFemale.jpeg" height="200px"></img>
         
         <ul class="list-group list-group-flush">
           <li class="list-group-item" id="contactInformation"><h5>Contact Information</h5>  
-            <div id="name">Jenny Smith</div>
+            <div>
+            <span id="firstName">Jenny Smith</span>
+            <span id="lastName"></span>
+          </div>
             <div id="phoneNumber">Phone number: 867-5309</div>
-        <div id="email">Email: tommytutone@music.com</div>
+        <div >Email: <span id="email">aaaa@bbb.com</span> </div>
         </li>
           <li class="list-group-item">
                 <h5>Availability</h5>
-<div>Monday-Friday: 2:30pm - 8am</div>
+<div id="availability">Monday-Friday: 2:30pm - 8am</div>
           </li>
-          <li class="list-group-item" id="nextShift"><h5>Next Scheduled Shift</h5>  
-            <div>Date: September 30, 2019 </div>
-                <div>Time: 4:30pm - 10pm</div>
+          <li class="list-group-item"><h5>Next Scheduled Shift</h5>  
+            <div>Date: <span id="nextShiftDate"> </span>
+                <div>Time: <span id="nextShiftTime"></span> </div>
 
         </ul>
         <div class="card-body">
-                <button type="button" class="btn btn-secondary"><a href="#"></a>Want To Swap Shifts with Jenny?</button>
+                <button type="button" id="swapShiftsButton" class="btn btn-secondary"><a href="#"></a>Want To Swap Shifts with <span id="name">name</span> ?</button>
 
           
         </div>
