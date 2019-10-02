@@ -16,5 +16,9 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
 
+    Tasks.associate = function(models) {
+      Tasks.belongsToMany(models.Shifts, {through: "TaskAssignment"})
+    };
+
     return Tasks;
   };

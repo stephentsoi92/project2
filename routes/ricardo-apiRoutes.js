@@ -3,8 +3,8 @@ var db = require("../models");
 module.exports = function(app) {
   // Get methods
   app.get("/api/positions", function(req, res) {
-    db.Positions.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+    db.Positions.findAll({}).then(function(dbExample) {
+      res.json(dbExample);
     });
   });
 
@@ -14,6 +14,17 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/shifts", function(req, res) {
+    db.Shifts.findAll({}).then(function(dbExample) {
+      res.json(dbExample);
+    });
+  });
+
+  app.get("/api/tasks", function(req, res) {
+    db.Tasks.findAll({}).then(function(dbExample) {
+      res.json(dbExample);
+    });
+  });
 
   // Create a new example
   app.post("/api/positions", function(req, res) {
