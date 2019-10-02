@@ -21,6 +21,12 @@ app.post("/api/employees/table", function(req, res) {
     res.json(dbEmpTable);
     });
 });
+
+app.post("/api/tasks", function(req, res) {
+    db.Tasks.create(req.body).then(function(dbTasksTable) {
+    res.json(dbTasksTable);
+    });
+});
   
 
   // Delete an example by id

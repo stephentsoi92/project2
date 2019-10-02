@@ -11,8 +11,9 @@ module.exports = function(sequelize, DataTypes) {
       Comments: {
           type:DataTypes.TEXT
         },
-      Complete: {
-          type:DataTypes.BOOLEAN
+        Complete: {
+          type:DataTypes.BOOLEAN,
+          defaultValue: false
         }
     });
 
