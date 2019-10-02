@@ -1,7 +1,7 @@
 // Read the data from database to create dropdown of positions
 $(document).ready(function() {
     $.ajax({
-        url: "http://localhost:3000/api/positions",
+        url: "/api/positions",
         method: "GET"
     }).then(function(response) {
         $("#employeePosition").empty();
@@ -13,11 +13,11 @@ $(document).ready(function() {
     });
 });
 
-
+// Function send the employee data to the post
 function sendEmployeeData(employeeData)
 {
     $.ajax({
-        url: "http://localhost:3000/api/employees",
+        url: "/api/employees",
         method: "POST",
         data: employeeData
     }).then(function(data){
@@ -38,7 +38,6 @@ function readEmployerFormData()
     }
 
     sendEmployeeData(employee);
-    // return employee;
 }
 
 $("#addNewEmployeeButton").on('click', function(event) {

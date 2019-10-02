@@ -1,12 +1,19 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all examples
+  // Get methods
   app.get("/api/positions", function(req, res) {
     db.Positions.findAll({}).then(function(dbExamples) {
       res.json(dbExamples);
     });
   });
+
+  app.get("/api/employees", function(req, res) {
+    db.Employees.findAll({}).then(function(dbExample) {
+      res.json(dbExample);
+    });
+  });
+
 
   // Create a new example
   app.post("/api/positions", function(req, res) {
@@ -16,7 +23,7 @@ module.exports = function(app) {
   });
 
   app.post("/api/employees", function(req, res) {
-    console.log('from reading request body', req.body);
+    // console.log('from reading request body', req.body);
     db.Employees.create(req.body).then(function(dbExample) {
       res.json(dbExample);
     });
