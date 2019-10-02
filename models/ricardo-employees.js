@@ -27,13 +27,13 @@
         foreignKey: {
           allowNull: false
         }
-      });
+      })
+    };
 
     Employees.associate = function(models) {
       Employees.belongsToMany(models.Shifts, {through: "ShiftsRoster"});
-    }
   };
-
+  
     return Employees;
   };
 
