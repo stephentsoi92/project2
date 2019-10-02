@@ -52,6 +52,22 @@ module.exports = function(app) {
     });
   });
 
+  app.post("/api/shiftsroster", function(req, res) {
+    console.log('shiftsroster post', req.body);
+    let shiftId = req.body.ShiftId;
+    res.json(shiftId)
+    db.Shifts.create({
+      ShiftId: shiftId,
+      employees: [{
+        EmployeeEmployeeId: 1,
+        EmployeeEmployeeId: 1
+      }]
+    })
+    // db.Shifts.create(req.body).then(function(dbExample) {
+    //   res.json(dbExample);
+    // });
+  });
+
   // Delete an example by id
   app.delete("/api/examples/:id", function(req, res) {
     db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
