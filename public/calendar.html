@@ -1,189 +1,198 @@
-<!doctype html>
-<html lang='en'>
-  <head>
-    <meta charset='utf-8' />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href='packages/core/main.css' rel='stylesheet' />
-    <link href='packages/daygrid/main.css' rel='stylesheet' />
-    <link href='calendar.css' rel='stylesheet' />
-    <link href='homepage.css' rel='stylesheet' />
-    <link href='packages/timegrid/main.css' rel='stylesheet'></script>
-    <link href='packages/list/main.css' rel='stylesheet'></script>
-
-    <script src='packages/core/main.js' rel='stylesheet'></script>
-    <script src='packages/daygrid/main.js' rel='stylesheet'></script>
-    <script src='packages/list/main.js' rel='stylesheet'></script>
-    <script src='packages/interaction/main.js' rel='stylesheet'></script>
-    <script src='packages/timegrid/main.js' rel='stylesheet'></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="js/signOut.js"></script>
-
-    <script>
-
-document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
+<!DOCTYPE html>
+<html>
+<head>
   
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'list' ],
-      defaultView: 'dayGridMonth',
-      defaultDate: '2019-09-07',
+<meta charset='utf-8' />
+<link href='https://fullcalendar.io/releases/fullcalendar/3.9.0/fullcalendar.min.css' rel='stylesheet' />
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+<link href='https://fullcalendar.io/releases/fullcalendar/3.9.0/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<script src='https://fullcalendar.io/releases/fullcalendar/3.9.0/lib/moment.min.js'></script>
+<script src='https://fullcalendar.io/releases/fullcalendar/3.9.0/lib/jquery.min.js'></script>
+<script src='https://fullcalendar.io/releases/fullcalendar/3.9.0/fullcalendar.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href='homepage.css' rel='stylesheet' />
+    <script src="js/signOut.js"></script>
+<script>
+  
+  $(document).ready(function() {
+    $('#calendar').fullCalendar({
       header: {
         left: 'prev,next today',
         center: 'title',
-        right: 'dayGridMonth,timeGridWeek,timeGridDay'
+        right: 'month,basicWeek,basicDay'
       },
-      events: [
+      defaultDate: '2018-03-12',
+      navLinks: true, // can click day/week names to navigate views
+      editable: true,
+      eventLimit: true, // allow "more" link when too many events
+           events: [
         {
-        title: 'Jenny Smith',
-          start: '2019-09-01T08:30:00',
-          end:   '2019-09-01T12:00:00'
+          title: 'All Day Event',
+          start: '2018-03-01',
+           backgroundColor:'red'
         },
         {
-        title: 'Theo Colt',
-          start: '2019-09-01T12:30:00',
-          end: '2019-09-01T16:00:00'
+          title: 'Long Event',
+          start: '2018-03-07',
+          end: '2018-03-10',
+          backgroundColor:'green'
         },
         {
-        title: 'Jenny Smith',
-          start: '2019-09-04T08:30:00',
-          end:   '2019-09-04T12:00:00'
+          id: 999,
+          title: 'Repeating Event',
+          start: '2018-03-09T16:00:00'
         },
         {
-        title: 'John Smith',
-          start: '2019-09-04T12:30:00',
-          end: '2019-09-04T16:00:00'
+          id: 999,
+          title: 'Repeating Event',
+          start: '2018-03-16T16:00:00'
         },
         {
-        title: 'Abigail Prado',
-          start: '2019-09-10T08:30:00',
-          end:   '2019-09-10T12:00:00'
+          title: 'Conference',
+          start: '2018-03-11',
+          end: '2018-03-13'
         },
         {
-        title: 'John Smith',
-          start: '2019-09-10T12:30:00',
-          end: '2019-09-10T16:00:00'
+          title: 'Meeting',
+          start: '2018-03-12T10:30:00',
+          end: '2018-03-12T12:30:00'
         },
         {
-          title: 'Juan Rodriguez',
-          start: '2019-09-12T12:00:00'
+          title: 'Lunch',
+          start: '2018-03-12T12:00:00'
         },
         {
-          title: 'Dezarai Fisher',
-          start: '2019-09-12T14:30:00'
+          title: 'Meeting',
+          start: '2018-03-12T14:30:00'
         },
         {
-          title: 'Isaac Brown',
-          start: '2019-09-13T07:00:00'
+          title: 'Happy Hour',
+          start: '2018-03-12T17:30:00'
         },
         {
-          title: 'Event at UMiami',
-          url: 'http://miami.edu/',
-          start: '2019-09-28'
+          title: 'Dinner',
+          start: '2018-03-12T20:00:00'
+        },
+        {
+          title: 'Birthday Party',
+          start: '2018-03-13T07:00:00'
+        },
+        {
+          title: 'Click for Google',
+          url: 'http://google.com/',
+          start: '2018-03-28'
         }
-      ]
+      ],
+      eventClick: function(calEvent, jsEvent, view, resourceObj) {
+          swal({
+            title: calEvent.title,
+            text: "Start From : "+moment(calEvent.start).format("MMMM Do YYYY, h:mm a"),
+            icon: "success",
+          });
+      }
     });
-  
-    calendar.render();
+    $(".fc-right .fc-button-group").append(
+          '<div class="input-group datetimepicker"><input type="text" class="form-control fc-datepicker" placeholder="YYYY-MM-DD" style="padding: 0;width: 0;border: none;margin: 0;"></div>');
+        $(".fc-datepicker").datepicker({
+          dateFormat: 'yy-mm-dd',
+          showOn: "button",
+          buttonText: '<span class="input-group-addon"><i class="fas fa-calendar-alt"></i></span>'
+        });
   });
-
-
-
-    </script>
-  </head>
-  <body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="calendar.html">Tuesday</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse text-right" id="navbarNavDropdown">
-          <div class="space-filler"></div>
-          <ul class="navbar-nav">
-              
-              <li class="nav-item ">
-                  <a class="nav-link active" href="calendar.html">Calendar</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link " href="tasks.html">Tasks</a>
-              </li>
-              <li class="nav-item ">
-                  <a class="nav-link" href="employee.html">Employees</a>
-              </li>
-              <li class="nav-item ">
-                  <a class="nav-link" href="#" data-toggle="modal" data-target="#signOut">Logout</a>
-              </li>
-          </ul>
-      </div>
-  </nav>
-
-
-<div class="row" >
-    <div class="card" id="sidebar" style="width: 18rem;">
-        <img src="../images/employeeFemale.jpeg" height="200px"></img>
-        
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item" id="contactInformation"><h5>Contact Information</h5>  
-            <div>
-            <span id="firstName">Jenny Smith</span>
-            <span id="lastName"></span>
-          </div>
-            <div id="phoneNumber">Phone number: 867-5309</div>
-        <div >Email: <span id="email">aaaa@bbb.com</span> </div>
-        </li>
-          <li class="list-group-item">
-                <h5>Availability</h5>
-<div id="availability">Monday-Friday: 2:30pm - 8am</div>
-          </li>
-          <li class="list-group-item"><h5>Next Scheduled Shift</h5>  
-            <div>Date: <span id="nextShiftDate"> </span>
-                <div>Time: <span id="nextShiftTime"></span> </div>
-
-        </ul>
-        <div class="card-body">
-                <button type="button" id="swapShiftsButton" class="btn btn-secondary"><a href="#"></a>Want To Swap Shifts with <span id="name">name</span> ?</button>
-
-          
-        </div>
-      </div>
-
-      <div id='calendar'>    </div>
-    </div>
-    <!-- Modal -->
-    <div class="modal fade" id="signOut" tabindex="-1" role="dialog" aria-labelledby="signOutLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="signOutLabel">Are you sure you want to sign out?</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body" id="logoutImage">
-                <img src="../images/logout.jpg" alt=""  id="logoutImage" style="width: 200px">
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary"  data-dismiss="modal" style="color: aliceblue" onclick="signOut()"> Sign Out </button>
-              <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="remain()"> Go Back </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
+</script>
+<style>
+  body {
+    margin: 40px 10px;
+    padding: 0;
+    font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+    font-size: 14px;
+  }
+  #calendar {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .hoverEffect {
+    font-size: 29px;
+    position: absolute;
+    margin: 30px 55px;
+    cursor: pointer;
+}
+.ui-datepicker-trigger
+{
+  background: transparent;
+    border: none;
+    margin: 0!important;
+    padding: 0!important;
+}
+.datetimepicker .input-group-addon {
+    background-color: #f9f9f9;
+    border-radius: 0;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    cursor: pointer;
+    height: 2.1em;
+    border: 1px solid #ccc;
     
+}
+.fc-state-default.fc-corner-right
+{
+  border-radius: 0px;
+}
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="calendar.html">Tuesday</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-right" id="navbarNavDropdown">
+            <div class="space-filler"></div>
+            <ul class="navbar-nav">
+                
+                <li class="nav-item ">
+                    <a class="nav-link active" href="calendar.html">Calendar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="tasks.html">Tasks</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="employee.html">Employees</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#signOut">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+  <div id='calendar'></div>
 
-
-      <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-  </body>
+  <!-- Modal -->
+  <div class="modal fade" id="signOut" tabindex="-1" role="dialog" aria-labelledby="signOutLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="signOutLabel">Are you sure you want to sign out?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="logoutImage">
+              <img src="../images/logout.jpg" alt=""  id="logoutImage" style="width: 200px">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary"  data-dismiss="modal" style="color: aliceblue" onclick="signOut()"> Sign Out </button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="remain()"> Go Back </button>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
 </html>
