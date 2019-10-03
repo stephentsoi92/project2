@@ -123,126 +123,19 @@ Add New Employee
                         <table class="table table-hover table-striped">
                             <thead>
                                 <tr>
-                                    <th scope="col">Select</th>
                                     <th scope="col">First</th>
                                     <th scope="col">Last</th>
                                     <th scope="col">Email</th>
                                     <th scope="col">Phone</th>
-                                    <th scope="col">Contact</th>
-
+                                    <th scope="col">Update</th>
+                                    <th scope="col">Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row"><div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                            <label class="form-check-label" for="defaultCheck1">
-                                            </label>
-                                          </div></th>
-                                    <th >Jenny</th>
-                                    <td>Smith</td>
-                                    <td><a href="mailto:name@email.com">jenny@Tuesday.com</a></td>
-                                    <td>8675309</td>
-                                    <td><button type="button" class="btn btn-primary" data-toggle="modal"
-                                            data-target="#exampleModal">
-                                            Contact Card
-                                        </button></td>
-                                </tr>
-                                <tr>
-                                        <th scope="row"><div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                <label class="form-check-label" for="defaultCheck1">
-                                                </label>
-                                              </div></th>
-                                    <th >Theo</th>
-                                    <td>Colt</td>
-                                    <td><a href="mailto:name@email.com">theo@Tuesday.com</a></td>
-                                    <td>45676543</td>
-                                    <td><button type="button" class="btn btn-primary" data-toggle="modal"
-                                            data-target="#exampleModal">
-                                            Contact Card
-                                        </button></td>
-                                </tr>
-                                <tr>
-                                        <th scope="row"><div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                <label class="form-check-label" for="defaultCheck1">
-                                                </label>
-                                              </div></th>
-                                    <th >John</th>
-                                    <td>Smith</td>
-                                    <td><a href="mailto:name@email.com">John@Tuesday.com</a></td>
-                                    <td>08098977</td>
-                                    <td><button type="button" class="btn btn-primary" data-toggle="modal"
-                                            data-target="#exampleModal">
-                                            Contact Card
-                                        </button></td>
-                                </tr>
-                                <tr>
-                                        <th scope="row"><div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                <label class="form-check-label" for="defaultCheck1">
-                                                </label>
-                                              </div></th>
-                                    <th >Abigail</th>
-                                    <td>Prado</td>
-                                    <td><a href="mailto:name@email.com">Abby@Tuesday.com</a></td>
-                                    <td>7654321</td>
-                                    <td><button type="button" class="btn btn-primary" data-toggle="modal"
-                                            data-target="#exampleModal">
-                                            Contact Card
-                                        </button></td>
-                                </tr>
-                                <tr>
-                                        <th scope="row"><div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                <label class="form-check-label" for="defaultCheck1">
-                                                </label>
-                                              </div></th>
-                                    <th >Dezarai</th>
-                                    <td>Fisher</td>
-                                    <td><a href="mailto:name@email.com">Dez@Tuesday.com</a></td>
-                                    <td>87678987</td>
-                                    <td><button type="button" class="btn btn-primary" data-toggle="modal"
-                                            data-target="#exampleModal">
-                                            Contact Card
-                                        </button></td>
-                                </tr>
-                                <tr>
-                                        <th scope="row"><div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                <label class="form-check-label" for="defaultCheck1">
-                                                </label>
-                                              </div></th>
-                                    <th >Juan</th>
-                                    <td>Rodriguez</td>
-                                    <td><a href="mailto:name@email.com">Juan@Tuesday.com</a></td>
-                                    <td>765674333</td>
-                                    <td><button type="button" class="btn btn-primary" data-toggle="modal"
-                                            data-target="#exampleModal">
-                                            Contact Card
-                                        </button></td>
-                                </tr>
-                                <tr>
-                                        <th scope="row"><div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                <label class="form-check-label" for="defaultCheck1">
-                                                </label>
-                                              </div></th>
-                                    <th >Isaac</th>
-                                    <td>Brown</td>
-                                    <td><a href="mailto:name@email.com">Isaac@Tuesday.com</a></td>
-                                    <td>9123208</td>
-                                    <td><button type="button" class="btn btn-primary" data-toggle="modal"
-                                            data-target="#exampleModal">
-                                            Contact Card
-                                        </button></td>
-                                </tr>
+                                
                             </tbody>
                             
                         </table>
-                        <button type="submit" class="btn btn-primary mb-2">Delete</button>
-                        <button type="submit" class="btn btn-primary mb-2">Update</button>
 
                     </div>
                 </div>
@@ -259,7 +152,7 @@ Add New Employee
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
+            <div class="modal-content" id="employee-card">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Jenny Smith</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -315,6 +208,7 @@ Add New Employee
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script src="js/ricardo-employer.js"></script>
+    <script src="js/alan-employees.js"></script>
 </body>
 
 </html>
