@@ -1,4 +1,5 @@
 var db = require("../models");
+var sequelize = require('sequelize');
 
 module.exports = function(app) {
   // Get methods
@@ -52,20 +53,14 @@ module.exports = function(app) {
     });
   });
 
+  // app.post("api/shiftsroster", function(req, res) {
+  //   db.Shifts.setEmployees([1, 2]).then(function(){
+  //     console.log("Success!");
+  //   })
+  // })
+
   app.post("/api/shiftsroster", function(req, res) {
-    console.log('shiftsroster post', req.body);
-    let shiftId = req.body.ShiftId;
-    res.json(shiftId)
-    db.Shifts.create({
-      ShiftId: shiftId,
-      employees: [{
-        EmployeeEmployeeId: 1,
-        EmployeeEmployeeId: 1
-      }]
-    })
-    // db.Shifts.create(req.body).then(function(dbExample) {
-    //   res.json(dbExample);
-    // });
+    res.json('Hit the ShiftsRoster route');
   });
 
   // Delete an example by id
