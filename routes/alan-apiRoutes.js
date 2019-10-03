@@ -8,17 +8,22 @@ module.exports = function(app) {
     });
   });
 
+    // end point to find one empoyee for an id
+    // app.get("/api/employees/:id", function(req, res) {
+    //   db.Employees.findOne({
+    //     where: {
+    //       EmployeeId: req.params.id
+    //     }
+    //   })
+    //     .then(function(dbEmployees) {
+    //       res.json(dbEmployees);
+    //     });
+    // });
+
 // testing position table
 app.post("/api/position/table", function(req, res) {
     db.Positions.create(req.body).then(function(dbPosition) {
     res.json(dbPosition);
-    });
-});
-
-// testing employees table
-app.post("/api/employees/table", function(req, res) {
-    db.Employees.create(req.body).then(function(dbEmpTable) {
-    res.json(dbEmpTable);
     });
 });
 
@@ -28,6 +33,29 @@ app.post("/api/tasks", function(req, res) {
     });
 });
   
+// Update an employee by id
+app.put("/api/employees/:id", function(req, res) {
+  db.Employees.update({
+    where: {
+      EmployeeId: req.params.id
+    }
+  })
+    .then(function(dbPost) {
+      res.json(dbPost);
+    });
+});
+
+// Delete an employee by id
+app.delete("/api/employees/:id", function(req, res) {
+  db.Employees.destroy({
+    where: {
+      EmployeeId: req.params.id
+    }
+  })
+    .then(function(dbPost) {
+      res.json(dbPost);
+    });
+});
 
   // Delete an example by id
   app.delete("/api/examples/:id", function(req, res) {
