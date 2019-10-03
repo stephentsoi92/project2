@@ -23,9 +23,10 @@ app.set("view engine", "handlebars");
 
 // Routes
 require("./routes/ricardo-apiRoutes")(app);
-require("./routes/ricardo-htmlRoutes")(app);
 require("./routes/alan-apiRoutes")(app);
+require("./routes/andreia_apiRoutes")(app);
 require("./routes/apiRoutes")(app);
+require("./routes/ricardo-htmlRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
 var syncOptions = { force: false };
