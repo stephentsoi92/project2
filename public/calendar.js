@@ -7,3 +7,20 @@ http.createServer(function (req, res) {
     res.end();
   });
 }).listen(3000);
+
+
+
+
+$(document).ready(function() {
+  $.ajax({
+      url: "/api/positions",
+      method: "GET"
+  }).then(function(response) {
+      $("#calendar").empty();
+
+      for (let i = 0; i < response.length; i++)
+      {
+          $("#calendar").append('<option value=' + String(response[i].PositionId) + '>' + String(response[i].PositionName) + '</options>');
+      }
+  });
+});
