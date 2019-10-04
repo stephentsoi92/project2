@@ -23,27 +23,26 @@ module.exports = function(app) {
   // --------------------------------------
   // Load Tasks page
   app.get("/tasks", function(req, res) {
-    res.render("tasks.html")
+    res.render("tasks")
   });
 
   // Load by specific task
-  app.get("/tasks/:id", function(req, res) {
-    res.render("tasks.html")
+  app.get("/employers", function(req, res) {
+    res.render("employers")
   });
 
   // Load Shifts page
-  app.get("/shifts", function(req, res) {
-    res.render("shifts.html")
+  app.get("/employee", function(req, res) {
+    res.render("employee")
   });
 
   // Load by specific shift
-  app.get("/shifts/:id", function(req, res) {
-    res.render("shifts.html")
+  app.get("/calendar", function(req, res) {
+    res.render("calendar")
   });
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
-    res.render("404");
+    res.render("index");
   });
 };
-
