@@ -23,6 +23,9 @@ module.exports = function(sequelize, DataTypes) {
       email: {
           type: DataTypes.TEXT
       },
+      tasks: {
+        type: DataTypes.TEXT
+    },
     });
   
     
