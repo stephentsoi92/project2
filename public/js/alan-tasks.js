@@ -22,7 +22,7 @@ function SendTasksData(tasksData)
         data: tasksData,
     }).then(function(data)
     {
-        $('input').val('')
+        $('textarea').val('')
     })
 };
 
