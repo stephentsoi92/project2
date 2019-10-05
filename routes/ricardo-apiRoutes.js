@@ -53,14 +53,29 @@ module.exports = function(app) {
     });
   });
 
-  // app.post("api/shiftsroster", function(req, res) {
-  //   db.Shifts.setEmployees([1, 2]).then(function(){
-  //     console.log("Success!");
-  //   })
-  // })
-
   app.post("/api/shiftsroster", function(req, res) {
     res.json('Hit the ShiftsRoster route');
+  });
+
+  app.delete("/api/tasks/:id", function(req, res) {
+    db.Tasks.destroy({ where: { TaskId: req.params.id } }).then(function(dbExample) {
+      res.json(dbExample);
+    });
+  });
+
+  app.delete("/api/tasks/:id", function(req, res) {
+    db.Tasks.destroy({ where: { TaskId: req.params.id } }).then(function(dbExample) {
+      res.json(dbExample);
+    });
+  });
+
+  app.put("/api/tasks/:id", function(req, res) {
+    db.Tasks.update(req.params.id,
+      {
+        where: {
+          TaskId: req.params.id
+        }
+    });
   });
 
   // Delete an example by id
