@@ -1,12 +1,17 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+// Find one employee
+app.get("/api/employees/:id", function(req, res) {
+  db.Employees.FindOne({
+    where: {
+      EmployeeId: req.params.id
+    }
+  })
+    .then(function(dbPost) {
+      res.json(dbPost);
     });
-  });
+});
 
     // end point to find one empoyee for an id
     // app.get("/api/employees/:id", function(req, res) {
@@ -35,6 +40,18 @@ app.post("/api/tasks", function(req, res) {
   
 // Update an employee by id
 app.put("/api/employees/:id", function(req, res) {
+  db.Employees.update(req.body,{
+    where: {
+      EmployeeId: req.params.id
+    }
+  })
+    .then(function(dbPost) {
+      res.json(dbPost);
+    });
+});
+
+// Update an employee by id
+app.patch("/api/employees/:id", function(req, res) {
   db.Employees.update({
     where: {
       EmployeeId: req.params.id

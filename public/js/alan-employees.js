@@ -20,15 +20,57 @@ $(document).ready(function() {
     });
 });
 
+// Read the data from database to create dropdown of positions
 $('body').on("click", ".UpdateContactCardBtn", function (){
-    $.ajax({
-        url: "/api/employees/"+$(this).data("id"),
-        method: "PUT"
-    }).then(function(response) {
-        console.log(response)
-    });
-})
+    let empId = $(this).attr("data-id")
+    console.log(empId);
+    console.log($(this).attr("data-id"));
 
+    $.ajax({
+        url: "/api/positions",
+        method: "GET"
+    }).then(function(response) {
+        $("#UpdateEmployeePosition").empty();
+
+        for (let i = 0; i < response.length; i++)
+        {
+            $("#UpdateEmployeePosition").append('<option value=' + String(response[i].PositionId) + '>' + String(response[i].PositionName) + '</options>');
+        }
+    });
+
+    $('body').on("click", "#UpdateEmployeeButton", function (event){
+        event.preventDefault();
+        readEmployerFormData(empId);
+    });
+
+});
+
+//Update employee card
+function sendEmployeeData(employeeData, empId)
+{
+    $.ajax({
+        url: "/api/employees/"+empId,
+        method: "PUT",
+        data: employeeData
+    }).then(function(data){
+        $('input').val('');
+    });
+}
+
+
+function readEmployerFormData(empId)
+{
+    let employee = {
+        PhoneNumber: $("#modal-phone").val().trim(),
+        Email: $("#modal-email").val().trim(),
+        Supervisor: false,
+        PositionPositionId: parseInt($("#employeePosition option:selected").val())
+    }
+
+    sendEmployeeData(employee, empId);
+}
+
+// Delete Employee Card
 $('body').on("click", ".DeleteContactCardBtn", function (){
     $.ajax({
         url: "/api/employees/"+$(this).data("id"),

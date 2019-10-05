@@ -44,106 +44,91 @@
         </div>
     </nav>
     <div class="container">
-        <h1>Employer's Portal</h1>
-        <br>
-
-        <div id="accordion">
-
-                <div class="card">
-                        <div class="card-header" id="headingOne">
-                          <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" >
-Add New Employee
-                            </button>
-                          </h5>
-                        </div>
-                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                          <div class="card-body">
-                                <form>
-                                        <div class="form-group">
-                                                <label for="firstName">First Name</label>
-                                                <input type="text" class="form-control" id="firstName" placeholder="Mac">
-                                              </div>    
-                                              <div class="form-group">
-                                                    <label for="lastName">Last Name</label>
-                                                    <input type="text" class="form-control" id="lastName" placeholder="Lovin">
-                                                  </div>
-                                    <div class="form-group">
-                                          <label for="email">Email Address</label>
-                                          <input type="email" class="form-control" id="email" placeholder="name@example.com">
-                                        </div>
-                                        <div class="form-group">
-                                                <label for="phone">Phone Number</label>
-                                                <input type="text" class="form-control" id="phone" placeholder="305-305-3005">
-                                              </div>
-                                              <div class="form-group">
-                                                    <label for="employeePosition">Employee Position </label>
-                                                    <select single class="form-control" id="employeePosition">
-                                                      <option value="" selected disabled>Select a position</option>
-                                                      <option>Tuesday</option>
-                                                      <option>Wednesday</option>
-                                                      <option>Thursday</option>
-                                                      <option>Friday</option>
-                                                      <option>Saturday</option>
-                                                      <option>Sunday</option>
-                                                    </select>
-                                                  </div>
-                                        <div class="form-group">
-                                          <label for="EmployeeShifts">Shifts Available (to select more than one => control + click on pc, command + click on mac)</label>
-                                          <select multiple class="form-control" id="employeeShifts">
-                                            <option>7am - 2:30pm</option>
-                                            <option>2:30pm - 8pm</option>
-                                            <option>8pm - 3:30am</option>
-                                            <option>3:30am - 7am</option>
-\                                          </select>
-                                        </div>
-                                        <div class="form-group">
-                                          <label for="employerComments">Comments (hidden from employee view)</label>
-                                          <textarea class="form-control" id="employerComments" rows="3"></textarea>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary mb-2" id="addNewEmployeeButton">Create New Employee</button>
-
-                                      </form>
-                          </div>
-                        </div>
-                      </div>
-            <div class="card">
-                <div class="card-header" id="headingTwo">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo"
-                            aria-expanded="true" aria-controls="collapseOne">
-                            Current Employees
-                        </button>
-                    </h5>
-                </div>
-                
-
-                <div id="collapseTwo" class="collapse " aria-labelledby="headingTwo" data-parent="#accordion">
-                    <div class="card-body">
-                        <table class="table table-hover table-striped">
-                            <thead>
-                                <tr>
-                                    <th scope="col">First</th>
-                                    <th scope="col">Last</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Phone</th>
-                                    <th scope="col">Update</th>
-                                    <th scope="col">Delete</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                
-                            </tbody>
-                            
-                        </table>
-
-                    </div>
-                </div>
+      <h1>Employer's Portal</h1>
+      <br>
+      <div id="accordion">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Add New Employee</button>
+            </h5>
+          </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+              <div class="card-body">
+                <form>
+                  <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="Mac">
+                  </div>    
+                  <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Lovin">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                  </div>
+                  <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="text" class="form-control" id="phone" placeholder="305-305-3005">
+                  </div>
+                  <div class="form-group">
+                    <label for="employeePosition">Employee Position </label>
+                    <select single class="form-control" id="employeePosition">
+                      <option value="" selected disabled>Select a position</option>
+                      <option>Tuesday</option>
+                      <option>Wednesday</option>
+                      <option>Thursday</option>
+                      <option>Friday</option>
+                      <option>Saturday</option>
+                      <option>Sunday</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="EmployeeShifts">Shifts Available (to select more than one => control + click on pc, command + click on mac)</label>
+                    <select multiple class="form-control" id="employeeShifts">
+                      <option>7am - 2:30pm</option>
+                      <option>2:30pm - 8pm</option>
+                      <option>8pm - 3:30am</option>
+                      <option>3:30am - 7am</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="employerComments">Comments (hidden from employee view)</label>
+                    <textarea class="form-control" id="employerComments" rows="3"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary mb-2" id="addNewEmployeeButton">Create New Employee</button>
+                </form>
+              </div>
             </div>
-
-
-
         </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+              <h5 class="mb-0">
+                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">Current Employees</button>
+              </h5>
+          </div>
+          <div id="collapseTwo" class="collapse " aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+              <table class="table table-hover table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+            
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
 
@@ -159,15 +144,42 @@ Add New Employee
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <img src="../images/employeeFemale.jpeg" alt="" style="width: 400px;">
-                    <p>jenny@Tuesday.com</p>
-                    <p>8675309</p>
+                <div class="modal-body" id="update-form">
+                  <form>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" class="form-control" id="modal-email" placeholder="name@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="text" class="form-control" id="modal-phone" placeholder="305-305-3005">
+                    </div>
+                    <div class="form-group">
+                      <label for="employeePosition">Employee Position </label>
+                      <select single class="form-control" id="UpdateEmployeePosition">
+                        <option value="" selected disabled>Select a position</option>
+                        <option>Tuesday</option>
+                        <option>Wednesday</option>
+                        <option>Thursday</option>
+                        <option>Friday</option>
+                        <option>Saturday</option>
+                        <option>Sunday</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="EmployeeShifts">Shifts Available (to select more than one => control + click on pc, command + click on mac)</label>
+                        <select multiple class="form-control" id="employeeShifts">
+                        <option>7am - 2:30pm</option>
+                        <option>2:30pm - 8pm</option>
+                        <option>8pm - 3:30am</option>
+                        <option>3:30am - 7am</option>
+                        </select>
+                    </div>
+                  </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary"><a href="mailto:name@email.com"
-                            style="color:aliceblue">Email</a></button>
+                  <button type="button" class="btn btn-secondary mb-2" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary mb-2" id="UpdateEmployeeButton">Update</button>
                 </div>
             </div>
         </div>
