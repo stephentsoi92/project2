@@ -3,7 +3,7 @@ var db = require("../models");
 module.exports = function(app) {
 // Find one employee
 app.get("/api/employees/:id", function(req, res) {
-  db.Employees.FindOne({
+  db.Employees.findOne({
     where: {
       EmployeeId: req.params.id
     }

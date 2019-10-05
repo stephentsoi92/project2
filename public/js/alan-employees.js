@@ -24,7 +24,6 @@ $(document).ready(function() {
 $('body').on("click", ".UpdateContactCardBtn", function (){
     let empId = $(this).attr("data-id")
     console.log(empId);
-    console.log($(this).attr("data-id"));
 
     $.ajax({
         url: "/api/positions",
@@ -36,6 +35,17 @@ $('body').on("click", ".UpdateContactCardBtn", function (){
         {
             $("#UpdateEmployeePosition").append('<option value=' + String(response[i].PositionId) + '>' + String(response[i].PositionName) + '</options>');
         }
+    });
+    
+    $.ajax({
+        url: "/api/employees/"+empId,
+        method: "GET"
+    }).then(function(response) {
+        $('#name-contact').empty();
+        console.log(response)
+        let updateCardName = '<h5 class="modal-title" id="exampleModalLabel name-contact">' + response.FirstName + ' ' + response.LastName + '</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+        console.log(updateCardName)
+        $('#name-contact').append(updateCardName);
     });
 
     $('body').on("click", "#UpdateEmployeeButton", function (event){
