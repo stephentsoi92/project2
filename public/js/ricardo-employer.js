@@ -14,7 +14,7 @@ $(document).ready(function() {
 });
 
 // Function send the employee data to the post
-function sendEmployeeData(employeeData)
+function _sendEmployeeData(employeeData)
 {
     $.ajax({
         url: "/api/employees",
@@ -22,11 +22,12 @@ function sendEmployeeData(employeeData)
         data: employeeData
     }).then(function(data){
         $('input').val('');
+        location.reload();
     });
 }
 
 
-function readEmployerFormData()
+function _readEmployerFormData()
 {
     let employee = {
         FirstName: $("#firstName").val().trim(),
@@ -37,12 +38,12 @@ function readEmployerFormData()
         PositionPositionId: parseInt($("#employeePosition option:selected").val())
     }
 
-    sendEmployeeData(employee);
+    _sendEmployeeData(employee);
 }
 
 $("#addNewEmployeeButton").on('click', function(event) {
     event.preventDefault();
-    readEmployerFormData();
+    _readEmployerFormData();
 });
 
 

@@ -70,11 +70,13 @@ module.exports = function(app) {
   });
 
   app.put("/api/tasks/:id", function(req, res) {
-    db.Tasks.update(req.params.id,
+    db.Tasks.update(req.body,
       {
         where: {
           TaskId: req.params.id
         }
+    }).then(function(response) {
+      res.json(response);
     });
   });
 
