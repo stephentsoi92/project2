@@ -57,7 +57,8 @@ h2{
 #logoutImage{
     object-position: center;
     align-content: center;
-    margin: 20px auto;
+    margin: 120px auto;
+background-size: contain;
 }
 
 #signOut{

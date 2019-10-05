@@ -51,7 +51,7 @@ $(document).ready(function() {
                 eventClick: function(calEvent, jsEvent, view, resourceObj) {
                     swal({
                       title: calEvent.title,
-                      text: " Shift Information: \n\nStarts at : "+moment(calEvent.start).format("MMMM Do YYYY, h:mm a") + " \nEnds at: "+ moment(calEvent.end).format("MMMM Do YYYY, h:mm a") + "\n\nPosition: " + calEvent.extendedProps.position + "\n\nPhone Number: " + calEvent.extendedProps.phone + "\n\nEmail: " + calEvent.extendedProps.email + "\n\nTasks Pending: " + calEvent.extendedProps.tasks, 
+                      text: " Shift starts at : "+moment(calEvent.start).format("MMMM Do YYYY, h:mm a") + " \nEnds at: "+ moment(calEvent.end).format("MMMM Do YYYY, h:mm a") + "\n\nPosition: " + calEvent.extendedProps.position + "\n\nPhone Number: " + calEvent.extendedProps.phone + "\n\nEmail: " + calEvent.extendedProps.email , 
                       icon: "success",
           
                       
