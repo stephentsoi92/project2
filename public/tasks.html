@@ -9,6 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
    
         <link rel="stylesheet" type="text/css" href="styles/tasks.css">
 
@@ -17,6 +18,10 @@
         <link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
         <script src="js/signOut.js"></script>
+
+   
+    <script src="../public/js/andreia-pendingTasks.js"></script>
+
 
 
     <title>Tuesday</title>
@@ -48,40 +53,81 @@
                     </ul>
                 </div>
             </nav>
+
+            <div id="accordion">
+
+                <div class="card">
+                        <div class="card-header" id="headingOne">
+                          <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" >
+                               Assign new task to employee currently on shift
+                            </button>
+                          </h5>
+                        </div>
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                          <div class="card-body">
+                                <form>
+            
+                                        <div class="form-group">
+                                                <div class="form-group">
+                                                        <label for="taskTitle">Task Title</label>
+                                                        <textarea class="form-control" id="taskTitle" rows="1"></textarea>
+                                                    </div>
+                                            
+                                        </div>
+                                       
+                                        <div class="form-group">
+                                            <label for="taskComment">Task Comments</label>
+                                            <textarea class="form-control" id="taskComment" rows="3"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary mb-2" id="addNewTaskButton" value="Add Task">Assign Task</button>
+                            
+                                    </form>
+                               
+                          </div>
+                        </div>
+                      </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo"
+                            aria-expanded="true" aria-controls="collapseOne">
+Pending Tasks                        </button>
+                    </h5>
+                </div>
+                
+
+                <div id="collapseTwo" class="collapse " aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div class="card-body">
+                            <table class="table table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Task Title</th>
+                                        <th scope="col">Task Description</th>
+                                        
+                                        <th scope="col">Update</th>
+                                        <th scope="col">Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                </tbody>
+                                
+                            </table>
+                            <br>
+                            <button type="submit" class="btn btn-primary mb-2" id="addNewTaskButton" value="Add Task">Update Tasks</button>
+                        </div>
+                        
+                    </div>
+            </div>
+
+
+
+        </div>
     <div class="container">
 
-        <h1>Assign New Task</h1>
-        <p ><i>** Task will be assigned to employee currently on shift</i></p>
-
-        
-
-        <form>
-            
-            <div class="form-group">
-                    <div class="form-group">
-                            <label for="taskTitle">Task Title</label>
-                            <textarea class="form-control" id="taskTitle" rows="1"></textarea>
-                        </div>
-                
-            </div>
-           
-            <div class="form-group">
-                <label for="taskComment">Task Comments</label>
-                <textarea class="form-control" id="taskComment" rows="3"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary mb-2" id="addNewTaskButton" value="Add Task">Assign Task</button>
-
-        </form>
-
-
-
-
-
-
-
-
         <!-- To-Do List -->
-        <div id="to-dos"></div>
+        
     </div>
 
     <!-- Modal -->
@@ -107,66 +153,7 @@
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <!-- Script -->
-    <script>
-
-
-
-        //  ============================= START CODING BELOW! =============================================
-
-        // Create an initial toDoCount variable
-        //  On Click event associated with the add-to-do function
-
-
-
-        var todos = [];
-        var storedTodos = localStorage.getItem("todos");
-        if (storedTodos) {
-            todos = JSON.parse(storedTodos);
-            displayTodos()
-        }
-
-
-        function displayTodos() {
-            $('#to-dos').empty();
-            for (var i = 0; i < todos.length; i++) {
-                $('#to-dos').append('<div><button class="checkbox" data-index="' + i + '">done</button> ' + todos[i] + '</div>');
-            }
-            localStorage.setItem("todos", JSON.stringify(todos));
-
-
-        }
-
-        $("#add-to-do").on("click", function (event) {
-            // prevent form from submitting
-            event.preventDefault();
-
-            var userInput = $("#to-do").val();
-
-            if (userInput == "") {
-                alert("Please enter a value");
-            }
-            else {
-                todos.push(userInput);
-                displayTodos();
-                $("#to-do").val("");
-            }
-
-        });
-
-        $(document.body).on("click", ".checkbox", function () {
-
-            var elementIndex = $(this).attr("data-index");
-            todos.splice(elementIndex, 1);
-            $(this).parent().remove();
-            localStorage.setItem("todos", JSON.stringify(todos));
-
-
-
-        });
-
-
-    </script>
+  
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
